@@ -95,6 +95,12 @@ function seafood_plugins_management() {
 			'force_activation'	=> false, 
 		),*/
 		array(
+			'name'				=> 'Max Mega Menu', 
+			'slug'				=> 'megamenu', 
+			'required'			=> false,
+			'force_activation'	=> false, 
+		),
+		array(
 			'name'				=> 'Yoast SEO', 
 			'slug'				=> 'wordpress-seo', 
 			'required'			=> false,
