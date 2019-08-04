@@ -27,7 +27,7 @@
 	<header id="main-header">
 		<div class="contgainer-fluid">
 			<div class="row justify-content-center">
-				<?php echo do_shortcode( '[site-identity]' ); ?>
+				<div class="col"><?php echo do_shortcode( '[site-identity]' ); ?></div>				
 			</div>
 		</div>
 		<nav class="navbar navbar-expand-md navbar-light navbar-custom-bg">			
