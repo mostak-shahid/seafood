@@ -12,7 +12,11 @@ a:visited,a:hover,a:active,a:focus{text-decoration:none}
     background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(11, 28, 49, 0.4)), to(transparent));
     background-image: linear-gradient(180deg, rgba(11, 28, 49, 0.4), transparent);
 }
-
+#main-header #mega-menu-wrap-mainmenu #mega-menu-mainmenu > li.mega-menu-item.mega-current-menu-item > a.mega-menu-link, 
+#main-header #mega-menu-wrap-mainmenu #mega-menu-mainmenu > li.mega-menu-item.mega-current-menu-ancestor > a.mega-menu-link, 
+#main-header #mega-menu-wrap-mainmenu #mega-menu-mainmenu > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link{background-color: transparent;}
+#main-header #mega-menu-wrap-mainmenu #mega-menu-mainmenu > li.mega-menu-item > a.mega-menu-link:hover{background-color: transparent;}
+#main-header #mega-menu-wrap-mainmenu #mega-menu-mainmenu > li.mega-menu-megamenu > ul.mega-sub-menu {background-color: rgba(255,255,255,.9);}
 /* Extra small devices (portrait phones,less than 576px) */
 @media (max-width:575.98px){}
 
@@ -29,7 +33,9 @@ a:visited,a:hover,a:active,a:focus{text-decoration:none}
 /*--------------------------------------------------------------------------------------------------------------*/
 
 /*Small devices (landscape phones,576px and up)*/
-@media (min-width:576px){}
+@media (min-width:576px){
+	#mega-menu-wrap-mainmenu{background-color: transparent;}
+}
 
 /* Medium devices (tablets,768px and up) */
 @media (min-width:768px){
