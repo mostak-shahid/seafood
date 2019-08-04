@@ -24,10 +24,13 @@ require_once('inc/metabox/init.php');
 require_once('inc/metabox/custom-cmb2-fields.php'); 
 require_once('functions/metaboxes.php'); 
 
+require_once('inc/TGM-Plugin-Activation-develop/plugin-management.php');
+
 require_once('functions/aq_resizer.php');
-require_once('functions/Mobile_Detect.php');
-require_once('functions/bs4navwalker.php');
-require_once('functions/breadcrumb.php');
+// require_once('functions/Mobile_Detect.php');
+// require_once('functions/bs4navwalker.php');
+// require_once('functions/breadcrumb.php');
+
 if (version_compare($GLOBALS['wp_version'], '5.0-beta', '>')) {    
     // WP > 5 beta
     add_filter('use_block_editor_for_post_type', '__return_false', 100);    
