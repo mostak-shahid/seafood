@@ -25,9 +25,9 @@
     </div>
 <?php endif; ?>
 	<header id="main-header">
-		<div class="contgainer-fluid">
+		<div class="container-fluid">
 			<div class="row justify-content-center">
-				<div class="col"><?php echo do_shortcode( '[site-identity]' ); ?></div>				
+				<?php echo do_shortcode( '[site-identity]' ); ?>			
 			</div>
 		</div>
 		<nav class="navbar navbar-expand-md navbar-light navbar-custom-bg">			
