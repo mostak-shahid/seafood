@@ -25,37 +25,19 @@
     </div>
 <?php endif; ?>
 	<header id="main-header">
-		<div class="container-fluid">
+		<div class="container">
 			<div class="row justify-content-center">
 				<?php echo do_shortcode( '[site-identity]' ); ?>			
 			</div>
-		</div>
-		<nav class="navbar navbar-expand-md navbar-light navbar-custom-bg">			
-			<a class="navbar-brand d-md-none d-lg-none" href="#">
-				<?php if (has_site_icon()) : ?>
-					<img class="img-responsive img-fluid" src="<?php echo get_site_icon_url(32)?>" alt="Logo">
-				<?php else : ?>
-					<?php echo bloginfo( 'name' ); ?>
-				<?php endif; ?>
-			</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-controls="collapsibleNavbar" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
+			<div class="row justify-content-center">
 			<?php
-			wp_nav_menu([
-				'menu'            => 'mainmenu',
-				'theme_location'  => 'mainmenu',
-				'container'       => 'div',
-				'container_id'    => 'collapsibleNavbar',
-				'container_class' => 'collapse navbar-collapse',
-				'menu_id'         => false,
-				'menu_class'      => 'navbar-nav ml-auto',
-				'depth'           => 2,
-				'fallback_cb'     => 'bs4navwalker::fallback',
-				//'walker'          => new bs4navwalker()
+				wp_nav_menu([
+					'menu'            => 'mainmenu',
+					'theme_location'  => 'mainmenu',
 				]);
 			?>
-		</nav>
+			</div>
+		</div>
 	</header>
 	<?php if (!is_front_page()) : ?>
 		<section id="page-title" <?php if(@$seafood_options['sections-title-background-type'] == 1) echo 'class="'.@$seafood_options['sections-title-background'].'"';?>>
