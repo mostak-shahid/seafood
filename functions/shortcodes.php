@@ -1,4 +1,35 @@
 <?php
+function admin_shortcodes_page(){
+	//add_menu_page( $page_title, $menu_title, $capability, $menu_slug, $function = '', $icon_url = '', $position = null )
+    add_menu_page( 
+        __( 'Theme Short Codes', 'textdomain' ),
+        'Short Codes',
+        'manage_options',
+        'shortcodes',
+        'shortcodes_page',
+        'dashicons-book-alt',
+        3
+    ); 
+}
+add_action( 'admin_menu', 'admin_shortcodes_page' );
+function shortcodes_page(){
+	?>
+	<div class="wrap">
+		<h1>Theme Short Codes</h1>
+		<ol>
+			<li>[site-identity class='' container_class=''] <span class="sdetagils">displays site identity according to theme option</span></li>
+			<li>[site-name link='0'] <span class="sdetagils">displays site name with/without site url</span></li>
+			<li>[copyright-symbol] <span class="sdetagils">displays copyright symbol</span></li>
+			<li>[this-year] <span class="sdetagils">displays 4 digit current year</span></li>
+			<li>[email offset=0 index=0 all=1 seperator=', '] <span class="sdetagils">displays email from theme option</span></li>
+			<li>[phone offset=0 index=0 all=1 seperator=', '] <span class="sdetagils">displays phone from theme option</span></li>
+			<li>[fax offset=0 index=0 all=1 seperator=', '] <span class="sdetagils">displays fax from theme option</span></li>
+			<li>[social_menu display='inline/block' title='0/1'] <span class="sdetagils">displays social media from theme option</span></li>		
+		</ol>
+	</div>
+	<?php
+}
+
 function site_identity_func( $atts = array(), $content = null ) {
 	global $seafood_options;
 	$logo_url = ($seafood_options['logo']['url']) ? $seafood_options['logo']['url'] : get_template_directory_uri(). '/images/logo.png';
@@ -163,46 +194,9 @@ function fax_func( $atts = array(), $content = '' ) {
 	return $output;
 }
 add_shortcode( 'fax', 'fax_func' );
-function address_func( $atts = array(), $content = '' ) {
-	global $seafood_options;
-	$contact_address = $seafood_options['contact-address'];
-	$html = '';
-	$atts = shortcode_atts( array(
-		'offset' => 0,
-		'map' => 0,
-		'address' => 1
-	), $atts, 'address' );
-	$n = 1;
-	$html .= '<span class="address-wrap">'; 
-	foreach ($contact_address as $address) :
-	$html .= '<span class="address">';
-		if ($n > $atts['offset']) :
-			if ($address[map_link]) $html .= '<a target="_blank" href="'.$address[map_link].'">';
-			if ($atts['map']) :		
-				$html .= '<span class="img-part">';
-					$html .= '<img class="img-fluid img-map" src="'.$address[image].'" alt="">';
-				$html .= '</span>';
-			endif;
-			if ($atts['address']) :	
-				$html .= '<span class="text-part">';
-					$html .= $address['description'];
-				$html .= '</span>';
-			endif;
-			if ($address[map_link]) $html .= '</a>';	
 
-		endif;
-		$n++;		
-	$html .= '</span>';
-	endforeach;
-	$html .= '</span>';
-	return $html;
-}
-add_shortcode( 'address', 'address_func' );
-function social_menu_fnc( $atts = array(), $content = '' ) {
-	include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-	if ( is_plugin_active( 'mos-image-alt/mos-image-alt.php' ) ) {
-		$alt_tag = mos_alt_generator(get_the_ID());
-	} 
+
+function social_menu_fnc( $atts = array(), $content = '' ) { 
 	global $seafood_options;
 	$html = '';
 	$contact_social = $seafood_options['contact-social'];
@@ -222,12 +216,12 @@ function social_menu_fnc( $atts = array(), $content = '' ) {
 			if (filter_var($basic_icon, FILTER_VALIDATE_URL)) {
 				//$basic_icon = do_shortcode();
 				list($width, $height) = getimagesize($basic_icon);
-				$str = '<span class="social-img"><img src="'.$basic_icon.'" alt="'.$alt_tag['social'] . $social['title'].'" width="'.$width.'" height="'.$height.'"></span>';
+				$str = '<span class="social-img"><img src="'.$basic_icon.'" alt="'.$social['title'].'" width="'.$width.'" height="'.$height.'"></span>';
 				if ($social['hover_icon']) {
 					//$hover_icon = do_shortcode(str_replace('{{home_url}}', home_url(), $social['hover_icon']));
 					$hover_icon = do_shortcode(mos_home_url_replace($social['hover_icon']));
 					list($hwidth, $hheight) = getimagesize($hover_icon);
-					$str .= '<span class="social-img-hover"><img src="'.$hover_icon.'" alt="'.$alt_tag['social'] . $social['title'].'" width="'.$hwidth.'" height="'.$hheight.'"></span>'; //hover_icon
+					$str .= '<span class="social-img-hover"><img src="'.$hover_icon.'" alt="'.$social['title'].'" width="'.$hwidth.'" height="'.$hheight.'"></span>'; //hover_icon
 				}
 			}
 			else { 
