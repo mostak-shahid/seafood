@@ -31,7 +31,7 @@ do_action( 'action_avobe_link', $page_details );
 						<div class="content">
 							<h2 class="heading"><?php echo $slide['title'] ?></h2>
 							<h3 class="sub-heading"><?php echo $slide['link_title'] ?></h3>
-							<button class="btn btn-outline-light border-0">Learn More</a>
+							<button class="btn btn-outline-light rounded-0">Learn More</a>
 						</div>
 						<a href="<?php echo do_shortcode( $slide['link_title'] ); ?>" class="hidden-link">Learn More</a>
 					</div>
