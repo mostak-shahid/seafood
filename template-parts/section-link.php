@@ -23,7 +23,6 @@ do_action( 'action_avobe_link', $page_details );
 				<?php if ($content) : ?>				
 					<div class="content-wrapper"><?php echo do_shortcode( $content ) ?></div>
 				<?php endif; ?>
-		<!-- <div class="container-fluid"> -->
 			<div class="row no-gutters">
 			<?php foreach($slides as $slide) : ?>
 				<div class="col-lg-3">
@@ -32,39 +31,13 @@ do_action( 'action_avobe_link', $page_details );
 						<div class="content">
 							<h2 class="heading"><?php echo $slide['title'] ?></h2>
 							<h3 class="sub-heading"><?php echo $slide['link_title'] ?></h3>
-							<button class="btn btn-outline-light">Learn More</a>
+							<button class="btn btn-outline-light border-0">Learn More</a>
 						</div>
 						<a href="<?php echo do_shortcode( $slide['link_title'] ); ?>" class="hidden-link">Learn More</a>
 					</div>
-<!-- 
-array(10) {
-  ["title"]=&gt;
-  string(9) "Title One"
-  ["link_title"]=&gt;
-  string(13) "Sub Title One"
-  ["link_url"]=&gt;
-  string(22) "https://www.google.com"
-  ["sort"]=&gt;
-  string(1) "0"
-  ["attachment_id"]=&gt;
-  string(2) "81"
-  ["thumb"]=&gt;
-  string(99) "http://localhost/wordpress/wp-content/uploads/2019/08/4k-wallpaper-audi-audi-r8-1402787-150x150.jpg"
-  ["image"]=&gt;
-  string(91) "http://localhost/wordpress/wp-content/uploads/2019/08/4k-wallpaper-audi-audi-r8-1402787.jpg"
-  ["height"]=&gt;
-  string(4) "4000"
-  ["width"]=&gt;
-  string(4) "6000"
-  ["target"]=&gt;
-  string(1) "0"
-}
-				
- -->
 				</div>
 			<?php endforeach; ?>
 			</div>
-		<!-- </div> -->
 		<?php 
 		/*
 		* action_after_link hook
