@@ -11,7 +11,10 @@ jQuery(document).ready(function($){
     $(window).load(function() {
         // Animate loader off screen
         var video_height = $('#section-banner #banner-video').height();
-        $('#section-banner').css('height',video_height);
+        var banner_height = video_height;
+        var window_height = $(window).height();
+        if (video_height > window_height) banner_height = window_height;
+        $('#section-banner .banner-content').css('height',banner_height);
     }); 
     $(window).scroll(function(){
         if ($(this).scrollTop() > 100) {
@@ -36,8 +39,8 @@ jQuery(document).ready(function($){
     }); 
     $('#section-banner-owl').owlCarousel({
         loop: true,
-        nav: true,
-        dots: true,
+        nav: false,
+        dots: false,
         items:1,
         margin: 0,              
         lazyLoad: true,

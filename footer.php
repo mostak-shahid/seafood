@@ -10,9 +10,26 @@ $page_details = array( 'id' => get_the_ID(), 'template_file' => basename( get_pa
             <div class="row">
               <div class="col-lg-6">
                 
-                  <?php echo do_shortcode( '[site-identity]' ); ?>      
-                  <strong>Head Office</strong>
-                  <address><?php echo do_shortcode( '[address index=1]' );?></address>
+                  <?php echo do_shortcode( '[site-identity]' ); ?> 
+                  <div class="footer-main-address">                    
+                    <?php echo do_shortcode( '[address index=1]' );?>
+                  </div>     
+                  <div class="footer-phone">
+                  <strong class="footer-phone">Phone: </strong>
+                    <?php echo do_shortcode( '[phone index=1]' );?>
+                    <?php echo do_shortcode( '[phone index=2]' );?>
+                    <?php echo do_shortcode( '[phone index=3]' );?>
+                  </div>
+                  <div class="footer-email">
+                    <strong>Email: </strong>
+                    <?php echo do_shortcode( '[email index=1]' );?>
+                  </div>
+                  <div class="footer-factory-address">
+                    <?php echo do_shortcode( '[address index=2]' );?>
+                  </div>
+                  <div class="footer-phone">
+                  <?php echo do_shortcode( '[phone offset=7]' );?>
+                  </div>
 
               </div>
               <div class="col-lg-6 align-self-end">

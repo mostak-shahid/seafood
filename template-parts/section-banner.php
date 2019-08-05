@@ -57,5 +57,4 @@ do_action( 'action_before_banner', $page_details );
 
 	<?php do_action( 'action_after_banner_loop', $page_details ); ?>
 </section>
-XXX
 <?php do_action( 'action_after_banner', $page_details ); ?>

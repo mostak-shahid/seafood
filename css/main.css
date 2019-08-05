@@ -22,14 +22,20 @@ a:visited,a:hover,a:active,a:focus{text-decoration:none}
 #main-header #mega-menu-wrap-mainmenu #mega-menu-mainmenu > li.mega-menu-item{margin-bottom: -3px;border-bottom: 5px solid transparent}
 #main-header #mega-menu-wrap-mainmenu #mega-menu-mainmenu > li.mega-menu-item:hover{border-bottom-color: #ffffff}
 
+#section-banner{color: #ffffff}
 #section-banner #video-con{position: fixed;top: 0;left: 0;width: 100%;height: 100%;}
 #section-banner #banner-video{width: 100%;height: auto;}
+#section-banner .static-banner .banner-content, #section-banner .owl-carousel .banner-content{display: -webkit-flex; display: -moz-flex; display: -ms-flex; display: -o-flex; display: flex; justify-content: flex-start; align-items: center; background-color: rgba(0,0,0,.2);}
+#section-banner .static-banner .banner-content .banner-text, #section-banner .owl-carousel .banner-content .banner-text{max-width:380px;}
 #section-link .link-unit{position: relative;text-align: center;}
 #section-link .link-unit .content{position: absolute;top: 0;left: 0;width: 100%;height: 100%;background-color: rgba(0,0,0,.3);color: #ffffff; padding-top: 7.29vw;}
+#footer .address-wrap .address-title{font-weight: bold;}
+#footer .footer-main-address .address-wrap .address-title{display: block;}
 #footer .footer-menu ul{padding: 0;margin: 0;list-style: none;}
 #footer .footer-menu ul ul{display: none;}
 #footer .footer-menu ul li{display: inline-block;}
-#footer .footer-menu ul li a{display: block;padding: 0 12px;}
+#footer .footer-menu ul li a{display: block;padding: 10px 12px;border-bottom: 5px solid transparent;}
+#footer .footer-menu ul li:hover a{border-bottom-color: #ffffff;}
 /* Extra small devices (portrait phones,less than 576px) */
 @media (max-width:575.98px){}
 

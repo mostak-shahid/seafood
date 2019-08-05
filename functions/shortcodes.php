@@ -209,23 +209,23 @@ function address_func( $atts = array(), $content = '' ) {
 	$html .= '<span class="address-wrap">';	
 	if ($atts['index']) :
 		$i = $atts['index'] - 1;
-	    $html .= '<span class="address">';
+	    $html .= '<span class="address address-'.$n.'">';
 	    $html .= '<span class="address-title">'.$seafood_options['contact-address'][$i]['title'].'</span>';
-		if ($seafood_options['contact-address']['map_link']) :
-			$html .= '<a href="'.$seafood_options['contact-address']['map_link'].'" target="_blank">'.$seafood_options['contact-address']['description'].'</a>';
+		if ($seafood_options['contact-address'][$i]['map_link']) :
+			$html .= '<a class="address-details" href="'.$seafood_options['contact-address'][$i]['map_link'].'" target="_blank">'.$seafood_options['contact-address'][$i]['description'].'</a>';
 		else :
-			$html .= $seafood_options['contact-address']['description'];
+			$html .= '<span  class="address-details">'.$seafood_options['contact-address'][$i]['description'].'</span>';
 		endif;
 	    $html .= '</span>';
 	else :
 		foreach ($seafood_options['contact-address'] as $address) :
 			if ($n > $atts['offset']) :
-			    $html .= '<span class="address">';
+			    $html .= '<span class="address address-'.$n.'">';
 				$html .= '<span class="address-title">'.$address['title'].'</span>';
 				if ($address['map_link']) :
-					$html .= '<a href="'.$address['map_link'].'" target="_blank">'.$address['description'].'</a>';
+					$html .= '<a class="address-details" href="'.$address['map_link'].'" target="_blank">'.$address['description'].'</a>';
 				else :
-					$html .= $address['description'];
+					$html .= '<span  class="address-details">'.$address['description'].'</span>';
 				endif;
 			    $html .= '</span>';
 			    $html .= $atts['seperator'];
