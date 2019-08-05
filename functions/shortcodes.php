@@ -213,7 +213,7 @@ function address_func( $atts = array(), $content = '' ) {
 	    $html .= '<span class="address-title">'.$seafood_options['contact-address'][$i]['title'].'</span>';
 		if ($seafood_options['contact-address']['map_link']) :
 			$html .= '<a href="'.$seafood_options['contact-address']['map_link'].'" target="_blank">'.$seafood_options['contact-address']['description'].'</a>';
-		else
+		else :
 			$html .= $seafood_options['contact-address']['description'];
 		endif;
 	    $html .= '</span>';
@@ -224,7 +224,7 @@ function address_func( $atts = array(), $content = '' ) {
 				$html .= '<span class="address-title">'.$address['title'].'</span>';
 				if ($address['map_link']) :
 					$html .= '<a href="'.$address['map_link'].'" target="_blank">'.$address['description'].'</a>';
-				else
+				else :
 					$html .= $address['description'];
 				endif;
 			    $html .= '</span>';
