@@ -1,3 +1,4 @@
+body{background-color: green}
 a{-webkit-transition:all .3s ease-out;-moz-transition:all .3s ease-out;-o-transition:all .3s ease-out;transition:all .3s ease-out;text-decoration:none}
 a:visited,a:hover,a:active,a:focus{text-decoration:none}
 .screen-reader-text{display:none}
@@ -11,12 +12,23 @@ a:visited,a:hover,a:active,a:focus{text-decoration:none}
 #main-header{
     background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(11, 28, 49, 0.4)), to(transparent));
     background-image: linear-gradient(180deg, rgba(11, 28, 49, 0.4), transparent);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
 }
-#main-header #mega-menu-wrap-mainmenu #mega-menu-mainmenu > li.mega-menu-item.mega-current-menu-item > a.mega-menu-link, 
+#section-banner #video-con{position: fixed;top: 0;left: 0;width: 100%;height: 100%;}
+#section-banner #banner-video{width: 100%;height: auto;}
+/* #main-header #mega-menu-wrap-mainmenu #mega-menu-mainmenu > li.mega-menu-item.mega-current-menu-item > a.mega-menu-link, 
 #main-header #mega-menu-wrap-mainmenu #mega-menu-mainmenu > li.mega-menu-item.mega-current-menu-ancestor > a.mega-menu-link, 
 #main-header #mega-menu-wrap-mainmenu #mega-menu-mainmenu > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link{background-color: transparent;}
 #main-header #mega-menu-wrap-mainmenu #mega-menu-mainmenu > li.mega-menu-item > a.mega-menu-link:hover{background-color: transparent;}
-#main-header #mega-menu-wrap-mainmenu #mega-menu-mainmenu > li.mega-menu-megamenu > ul.mega-sub-menu {background-color: rgba(255,255,255,.9);}
+#main-header #mega-menu-wrap-mainmenu #mega-menu-mainmenu > li.mega-menu-megamenu > ul.mega-sub-menu {background-color: rgba(255,255,255,.9);} */
+#main-header .mega-menu-wrap {border-bottom: 1px solid #ffffff;}
+#main-header #mega-menu-wrap-mainmenu #mega-menu-mainmenu > li.mega-menu-item{margin-bottom: -3px;border-bottom: 5px solid transparent}
+#main-header #mega-menu-wrap-mainmenu #mega-menu-mainmenu > li.mega-menu-item:hover{border-bottom-color: #ffffff}
+#footer{height: 300px}
 /* Extra small devices (portrait phones,less than 576px) */
 @media (max-width:575.98px){}
 

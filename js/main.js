@@ -1,13 +1,18 @@
 jQuery(document).ready(function($){
     var loader = $('#loader-status').val();
     if (loader == 1) {
-        $('body').css({"height": "100%", "overflow": "hidden"})
+        $('body').css({"height": "100%", "overflow": "hidden"});
         $(window).load(function() {
             // Animate loader off screen
             $('body').removeAttr("style");
             $(".se-pre-con").fadeOut("slow");
         });
-    } 
+    }
+    $(window).load(function() {
+        // Animate loader off screen
+        var video_height = $('#section-banner #banner-video').height();
+        $('#section-banner').css('height',video_height);
+    }); 
     $(window).scroll(function(){
         if ($(this).scrollTop() > 100) {
             //$('.scrollup').fadeIn();

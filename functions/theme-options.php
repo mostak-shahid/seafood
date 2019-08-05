@@ -406,6 +406,7 @@
                     ),
                     'Disabled' => array(
                         'banner' => 'Banner',
+                        'link' => 'Linking Section',
                     )
                 ),
             ),
@@ -980,6 +981,14 @@
                 'default'  => 'No HTML is allowed in here.',
                 'required' => array( 'sections-banner-select', '=', 'shortcode' ),
             ),
+            array(
+                'id'       => 'sections-banner-bg',
+                'type'     => 'text',
+                'title'    => __( 'Background Video', 'redux-framework-demo' ),
+                'subtitle' => __( 'This must be a URL.', 'redux-framework-demo' ),
+                'desc'     => __( 'You may add any embeded URL, like Youtube..', 'redux-framework-demo' ),
+                'validate' => 'url',
+            ),
         )
     ) );    
     //Content Section
@@ -1060,6 +1069,183 @@
             ),
         )
     ) ); 
+
+    //Linking Section
+    Redux::setSection( $opt_name, array(
+        'title'            => __( 'Linking Section', 'redux-framework-demo' ),
+        'id'               => 'sections-link',
+        'subsection'       => true,
+        'desc'             => '',
+        'customizer_width' => '450px',
+        'icon'             => 'el el-move',
+        'fields'     => array(
+            array(
+                'id'             => 'sections-link-padding',
+                'type'           => 'spacing',
+                'mode'           => 'padding',
+                'all'            => false,
+                'units'          => array( 'em', 'px', '%', 'vw', 'vh' ),
+                'units_extended' => 'true',
+                'output'         => array( '#section-link .content-wrap' ),
+                'title'          => __( 'Section Padding', 'redux-framework-demo' ),
+            ),  
+            array(
+                'id'             => 'sections-link-margin',
+                'type'           => 'spacing',
+                'mode'           => 'margin',
+                'all'            => false,
+                'units'          => array( 'em', 'px', '%', 'vw', 'vh' ),
+                'units_extended' => 'true',
+                'output'         => array( '#section-link .content-wrap' ),
+                'title'          => __( 'Section Margin', 'redux-framework-demo' ),
+            ),        
+            array(
+                'id'       => 'sections-link-border',
+                'type'     => 'border',
+                'title'    => __( 'Section Border', 'redux-framework-demo' ),
+                'output'   => array( '#section-link .content-wrap' ),
+                'all'      => false,
+            ),
+            array(
+                'id'       => 'sections-link-title',
+                'type'     => 'text',
+                'title'    => __( 'Section Title', 'redux-framework-demo' ),
+                'desc'     => 'You can use span tag ( &lt;span&gt;&lt;/span&gt;, &lt;strong&gt;&lt;/strong&gt;, &lt;em&gt;&lt;/em&gt;, &lt;br /&gt;) here.',
+                'validate'     => 'html_custom',
+                'allowed_html' => array(
+                    'br'     => array(),
+                    'em'     => array(),
+                    'strong' => array(),
+                    
+                    'span' => array(
+                        'id' => array(),
+                        'class' => array()
+                    )
+                )
+            ),
+            array(
+                'id'      => 'sections-link-content',
+                'type'    => 'editor',
+                'title'   => __( 'Section Content', 'redux-framework-demo' ),
+                'args'    => array(
+                    'wpautop'       => false,
+                    'media_buttons' => false,
+                    'textarea_rows' => 5,
+                    //'tabindex' => 1,
+                    //'editor_css' => '',
+                    'teeny'         => false,
+                    //'tinymce' => array(),
+                    //'quicktags'     => false,
+                )
+            ),
+            array(
+                'id'          => 'sections-link-slides',
+                'type'        => 'mos_slides',
+                'title'       => __( 'Section Details', 'redux-framework-demo' ),              
+                'show' => array(
+                    'title' => true,
+                    'description' => false,
+                    'link_title' => true,
+                    'link_url' => true,
+                    'target' => true,
+                ),
+                'placeholder' => array(
+                    'title'       => __( 'Title', 'redux-framework-demo' ),
+                    'description' => __( 'Description Here', 'redux-framework-demo' ),
+                    'link_title'         => __( 'Sub title', 'redux-framework-demo' ),
+                    'link_url'         => __( 'Link', 'redux-framework-demo' ),
+                )
+            ),
+            array(
+                'id'       => 'sections-link-color-type',
+                'type'     => 'button_set',
+                'title'    => __( 'Section text color', 'redux-framework-demo' ),
+                'options'  => array(
+                    '1' => 'Default Colors',
+                    '2' => 'Custom Colors'
+                ),
+                'default'  => '1',
+            ),
+            array(
+                'id'       => 'sections-link-color',
+                'type'     => 'select',
+                'title'    => __( 'Select Color', 'redux-framework-demo' ),
+                //Must provide key => value pairs for select options
+                'options'  => array(
+                    "text-primary" => 'Text primary',
+                    "text-secondary" => 'Text secondary',
+                    "text-success" => 'Text success',
+                    "text-danger" => 'Text danger',
+                    "text-warning" => 'Text warning',
+                    "text-info" => 'Text info',
+                    "text-light" => 'Text light',
+                    "text-dark" => 'Text dark',
+                    "text-body" => 'Text body',
+                    "text-muted" => 'Text muted',
+                    "text-white" => 'Text white',
+                    "text-black-50" => 'Text black-50',
+                    "text-white-50" => 'Text white-50',
+                ),
+                'required' => array( 'sections-link-color-type', '=', '1' ),
+            ),
+            array(
+                'id'       => 'sections-link-color-rgba',
+                'type'     => 'color_rgba',
+                'title'    => __( 'Select Color', 'redux-framework-demo' ),
+                'validate' => 'colorrgba',
+                'required' => array( 'sections-link-color-type', '=', '2' ),
+                'output'         => array( '#section-link' ),
+                'mode'     => 'color',
+                'validate' => 'colorrgba',
+            ),
+            array(
+                'id'       => 'sections-link-link-color',
+                'type'     => 'link_color',
+                'title'    => __('Links Color Option', 'redux-framework-demo'),
+                'validate' => 'color',
+                'output'         => array( '#section-link a' ),
+            ),
+            array(
+                'id'       => 'sections-link-background-type',
+                'type'     => 'button_set',
+                'title'    => __( 'Section Background Type', 'redux-framework-demo' ),
+                'options'  => array(
+                    '1' => 'Default Colors',
+                    '2' => 'Custom Colors'
+                ),
+                'default'  => '1',
+            ),
+            array(
+                'id'       => 'sections-link-background',
+                'type'     => 'select',
+                'title'    => __( 'Section Background', 'redux-framework-demo' ),
+                //Must provide key => value pairs for select options
+                'options'  => array(
+                    'bg-primary' => 'Primary Background',
+                    'bg-secondary' => 'Secondary Background',
+                    'bg-success' => 'Success Background',
+                    'bg-danger' => 'Danger Background',
+                    'bg-warning' => 'Warning Background',
+                    'bg-info' => 'Info Background',
+                    'bg-light' => 'Light Background',
+                    'bg-dark' => 'Dark Background',
+                    'bg-white' => 'White Background',
+                    'bg-transparent' => 'Transparent Background',
+                ),
+                'required' => array( 'sections-link-background-type', '=', '1' ),
+            ),
+            array(
+                'id'       => 'sections-link-background-rgba',
+                'type'     => 'color_rgba',
+                'title'    => __( 'Section Background', 'redux-framework-demo' ),
+                'validate' => 'colorrgba',
+                'required' => array( 'sections-link-background-type', '=', '2' ),
+                'output'         => array( '#section-link' ),
+                'mode'     => 'background',
+                'validate' => 'colorrgba',
+            ),
+        )
+    ) );  
 
     //Blank
     Redux::setSection( $opt_name, array(
