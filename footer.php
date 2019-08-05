@@ -11,7 +11,8 @@ $page_details = array( 'id' => get_the_ID(), 'template_file' => basename( get_pa
               <div class="col-lg-6">
                 
                   <?php echo do_shortcode( '[site-identity]' ); ?>      
-                
+                  <strong>Head Office</strong>
+                  <address>Address</address>
 
               </div>
               <div class="col-lg-6 align-self-end">
