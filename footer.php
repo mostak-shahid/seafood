@@ -2,11 +2,30 @@
 global $seafood_options;
 $page_details = array( 'id' => get_the_ID(), 'template_file' => basename( get_page_template() ));
 ?>
-  <?php get_template_part( 'template-parts/section', 'widgets' ); ?>
   <footer id="footer" <?php if(@$seafood_options['sections-footer-background-type'] == 1) echo 'class="'.@$seafood_options['sections-footer-background'].'"';?>>
     <div class="content-wrap">
-      <div class="container">
-        <?php echo do_shortcode( $seafood_options['sections-footer-content'] ); ?>
+      <div class="container-fluid">
+        <div class="row  justify-content-center">
+          <div class="col-lg-11">
+            <div class="row">
+              <div class="col-lg-6">
+                
+                  <?php echo do_shortcode( '[site-identity]' ); ?>      
+                
+
+              </div>
+              <div class="col-lg-6 align-self-end">
+                <?php
+                wp_nav_menu([
+                  'menu'            => 'footermenu',
+                  'theme_location'  => 'footermenu',
+                  'menu_class'      => 'footer-menu'
+                ]);
+                ?>
+              </div>  
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </footer>

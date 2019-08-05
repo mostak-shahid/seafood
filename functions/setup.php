@@ -18,7 +18,7 @@ if ( ! function_exists( 'seafood_setup' ) ) :
 		load_theme_textdomain( 'theme', get_template_directory() . '/languages' );
 		register_nav_menus( array(
 			'mainmenu' => __('Main Menu', 'seafood'),
-			'mobilemenu' => __('Mobile Menu', 'seafood'),
+			'footer' => __('Footer Menu', 'seafood'),
 		));
 		add_theme_support( 'html5', array(
 			'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'

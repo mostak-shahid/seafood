@@ -11,7 +11,7 @@ require_once('functions/theme-functions.php');
 require_once('functions/scripts.php');
 require_once('functions/setup.php');
 require_once('functions/shortcodes.php');
-require_once('functions/widgets.php');
+// require_once('functions/widgets.php');
 require_once('functions/custom-comments.php');
 require_once('functions/theme-filter-hooks.php');
 
