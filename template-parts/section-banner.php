@@ -3,6 +3,9 @@ global $seafood_options;
 $select = $seafood_options['sections-banner-select'];
 $slides = $seafood_options['sections-banner-details'];
 $shortcode = $seafood_options['sections-banner-shortcode'];
+$cover = $seafood_options['sections-banner-bg-cover']['url'];
+$mp4 = $seafood_options['sections-banner-bg-mp4'];
+$webm = $seafood_options['sections-banner-bg-webm'];
 $n = 1;
 $page_details = array( 'id' => get_the_ID(), 'template_file' => basename( get_page_template() ));
 do_action( 'action_before_banner', $page_details );
@@ -10,9 +13,13 @@ do_action( 'action_before_banner', $page_details );
 <section id="section-banner">
 	<?php do_action( 'action_before_banner_loop', $page_details ); ?>
 	<div id="video-con">
-		<video id="banner-video" autoplay loop style="background-image:url(https://assets.website-files.com/59b66f5a4f8bc000016301ee/59fc879d463ca50001a82b3c_icelandic-corporate-video-poster-00001.jpg)" muted="" playsinline="">
-			<source src="https://assets.website-files.com/5aa64811f3d89b00012407a2/5aa64811f3d89b00012407f4_icelandic-corporate-video-transcode.mp4">
-			<source src="https://assets.website-files.com/5aa64811f3d89b00012407a2/5aa64811f3d89b00012407f4_icelandic-corporate-video-transcode.webm">
+		<video id="banner-video" autoplay loop muted playsinline <?php if ($cover) : ?> style="background-image:url(<?php echo $cover ?>)" <?php endif; ?>>
+		<?php if($mp4) : ?>
+			<source src="<?php echo $mp4 ?>">
+		<?php endif; ?>
+		<?php if($webm) ?>
+			<source src="<?php echo $webm ?>">
+		<?php endif; ?>
 		</video>		
 	</div>
 
