@@ -12,7 +12,7 @@ $page_details = array( 'id' => get_the_ID(), 'template_file' => basename( get_pa
                 
                   <?php echo do_shortcode( '[site-identity]' ); ?>      
                   <strong>Head Office</strong>
-                  <address>Address</address>
+                  <address><?php echo do_shortcode( '[address index=1]' );?></address>
 
               </div>
               <div class="col-lg-6 align-self-end">

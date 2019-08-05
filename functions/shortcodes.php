@@ -196,11 +196,55 @@ function fax_func( $atts = array(), $content = '' ) {
 add_shortcode( 'fax', 'fax_func' );
 
 
+function address_func( $atts = array(), $content = '' ) {
+    global $seafood_options;
+    $html = '';
+	$atts = shortcode_atts( array(
+		'offset' => 0,
+		'index' => 0,
+		'all' => 1,
+		'seperator' => ', '
+	), $atts, 'address' );
+	$n = 1; 
+	$html .= '<span class="address-wrap">';	
+	if ($atts['index']) :
+		$i = $atts['index'] - 1;
+	    $html .= '<span class="address">';
+	    $html .= '<span class="address-title">'.$seafood_options['contact-address'][$i]['title'].'</span>';
+		if ($seafood_options['contact-address']['map_link']) :
+			$html .= '<a href="'.$seafood_options['contact-address']['map_link'].'" target="_blank">'.$seafood_options['contact-address']['description'].'</a>';
+		else
+			$html .= $seafood_options['contact-address']['description'];
+		endif;
+	    $html .= '</span>';
+	else :
+		foreach ($seafood_options['contact-address'] as $address) :
+			if ($n > $atts['offset']) :
+			    $html .= '<span class="address">';
+				$html .= '<span class="address-title">'.$address['title'].'</span>';
+				if ($address['map_link']) :
+					$html .= '<a href="'.$address['map_link'].'" target="_blank">'.$address['description'].'</a>';
+				else
+					$html .= $address['description'];
+				endif;
+			    $html .= '</span>';
+			    $html .= $atts['seperator'];
+			endif;
+			$n++;
+		endforeach;
+	endif;	    
+	$output = rtrim(  $html, $atts['seperator']);
+	$output .= '</span>';
+	return $output;
+
+	// do shortcode actions here
+}
+add_shortcode( 'address', 'address_func' );
+
 function social_menu_fnc( $atts = array(), $content = '' ) { 
 	global $seafood_options;
 	$html = '';
 	$contact_social = $seafood_options['contact-social'];
-	$contact_address = $seafood_options['contact-address'];
 	$atts = shortcode_atts( array(
 		'display' => 'inline',
 		'title' => 0,
