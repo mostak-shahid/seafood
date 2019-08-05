@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Stag';
+  src: url('https://assets.website-files.com/5aa64811f3d89b00012407a2/5aa64811f3d89b00012407e4_Stag-Semibold-Web.eot') format('embedded-opentype'), url('https://assets.website-files.com/5aa64811f3d89b00012407a2/5aa64811f3d89b00012407ed_Stag-Semibold-Web.woff') format('woff'), url('https://assets.website-files.com/5aa64811f3d89b00012407a2/5aa64811f3d89b0001240855_Stag-Semibold-Web.ttf') format('truetype'), url('https://assets.website-files.com/5aa64811f3d89b00012407a2/5aa64811f3d89b0001240860_Stag-Semibold-Web.svg') format('svg');
+  font-weight: 600;
+  font-style: normal;
+}
+#main-header .mega-sub-menu a strong, #section-banner .banner-title{font-family: Stag, sans-serif;}
 a{-webkit-transition:all .3s ease-out;-moz-transition:all .3s ease-out;-o-transition:all .3s ease-out;transition:all .3s ease-out;text-decoration:none}
 a:visited,a:hover,a:active,a:focus{text-decoration:none}
 .hidden-link{position: absolute;top: 0;left: 0;width: 100%;height: 100%;opacity: 0}
@@ -9,24 +16,19 @@ a:visited,a:hover,a:active,a:focus{text-decoration:none}
 .breadcrumb li+li:before{display:inline-block;content:'/';margin:0 5px}
 
 #main-header,header,section,footer,#footer{position:relative}
-#main-header{
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(11, 28, 49, 0.4)), to(transparent));
-    background-image: linear-gradient(180deg, rgba(11, 28, 49, 0.4), transparent);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 2;
-}
+#main-header{background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(11, 28, 49, 0.4)), to(transparent)); background-image: linear-gradient(180deg, rgba(11, 28, 49, 0.4), transparent); position: absolute; top: 0; left: 0; width: 100%; z-index: 2; }
 #main-header .mega-menu-wrap {border-bottom: 1px solid #ffffff;}
 #main-header #mega-menu-wrap-mainmenu #mega-menu-mainmenu > li.mega-menu-item{margin-bottom: -3px;border-bottom: 5px solid transparent}
 #main-header #mega-menu-wrap-mainmenu #mega-menu-mainmenu > li.mega-menu-item:hover{border-bottom-color: #ffffff}
+#main-header .mega-sub-menu a{color: #183a64;}
+#main-header .mega-sub-menu a strong{color: #8e704e;font-size: 24px}
 
 #section-banner{color: #ffffff}
 #section-banner #video-con{position: fixed;top: 0;left: 0;width: 100%;height: 100%;}
 #section-banner #banner-video{width: 100%;height: auto;}
-#section-banner .static-banner .banner-content, #section-banner .owl-carousel .banner-content{display: -webkit-flex; display: -moz-flex; display: -ms-flex; display: -o-flex; display: flex; justify-content: flex-start; align-items: center; background-color: rgba(0,0,0,.2);}
-#section-banner .static-banner .banner-content .banner-text, #section-banner .owl-carousel .banner-content .banner-text{max-width:380px;}
+#section-banner .static-banner .banner-content, #section-banner .owl-carousel .banner-content{display: -webkit-flex; display: -moz-flex; display: -ms-flex; display: -o-flex; display: flex; justify-content: flex-start; align-items: center; background-color: rgba(0,0,0,.4);}
+#section-banner .static-banner .banner-content .banner-text, #section-banner .owl-carousel .banner-content .banner-text{max-width:420px;}
+#section-banner .banner-title{font-size: 44px; line-height: 49px; font-weight: 400; }
 #section-link .link-unit{position: relative;text-align: center;}
 #section-link .link-unit .content{position: absolute;top: 0;left: 0;width: 100%;height: 100%;background-color: rgba(0,0,0,.3);color: #ffffff; padding-top: 7.29vw;}
 #footer .address-wrap .address-title{font-weight: bold;}
