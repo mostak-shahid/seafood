@@ -17,7 +17,7 @@ do_action( 'action_before_banner', $page_details );
 		<?php if($mp4) : ?>
 			<source src="<?php echo $mp4 ?>">
 		<?php endif; ?>
-		<?php if($webm) ?>
+		<?php if($webm) : ?>
 			<source src="<?php echo $webm ?>">
 		<?php endif; ?>
 		</video>		
