@@ -10,7 +10,7 @@ do_action( 'action_before_banner', $page_details );
 <section id="section-banner">
 	<?php do_action( 'action_before_banner_loop', $page_details ); ?>
 	<div id="video-con">
-		<video id="banner-video" autoplay="" loop="" style="background-image:url(https://assets.website-files.com/59b66f5a4f8bc000016301ee/59fc879d463ca50001a82b3c_icelandic-corporate-video-poster-00001.jpg)" muted="" playsinline="">
+		<video id="banner-video" autoplay loop style="background-image:url(https://assets.website-files.com/59b66f5a4f8bc000016301ee/59fc879d463ca50001a82b3c_icelandic-corporate-video-poster-00001.jpg)" muted="" playsinline="">
 			<source src="https://assets.website-files.com/5aa64811f3d89b00012407a2/5aa64811f3d89b00012407f4_icelandic-corporate-video-transcode.mp4">
 			<source src="https://assets.website-files.com/5aa64811f3d89b00012407a2/5aa64811f3d89b00012407f4_icelandic-corporate-video-transcode.webm">
 		</video>		
