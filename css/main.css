@@ -4,6 +4,20 @@
   font-weight: 600;
   font-style: normal;
 }
+@font-face {
+  font-family: 'Frutiger';
+  src: url('https://assets.website-files.com/5aa64811f3d89b00012407a2/5aa64811f3d89b00012407e9_Frutiger-Bold.eot') format('embedded-opentype'), url('https://assets.website-files.com/5aa64811f3d89b00012407a2/5aa64811f3d89b00012407dd_Frutiger-Bold.woff') format('woff'), url('https://assets.website-files.com/5aa64811f3d89b00012407a2/5aa64811f3d89b00012407cd_Frutiger-Bold.ttf') format('truetype'), url('https://assets.website-files.com/5aa64811f3d89b00012407a2/5aa64811f3d89b00012407ee_Frutiger-Bold.svg') format('svg');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Frutiger';
+  src: url('https://assets.website-files.com/5aa64811f3d89b00012407a2/5aa64811f3d89b00012407db_Frutiger-Roman.eot') format('embedded-opentype'), url('https://assets.website-files.com/5aa64811f3d89b00012407a2/5aa64811f3d89b000124085c_Frutiger-Roman.woff') format('woff'), url('https://assets.website-files.com/5aa64811f3d89b00012407a2/5aa64811f3d89b00012407ea_Frutiger-Roman.ttf') format('truetype'), url('https://assets.website-files.com/5aa64811f3d89b00012407a2/5aa64811f3d89b00012407d3_Frutiger-Roman.svg') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+body{font-family: Frutiger, sans-serif;}
+body {color: #575756; font-size: 12px;} 
 #main-header .mega-sub-menu a strong, #section-banner .banner-title{font-family: Stag, sans-serif;}
 a{-webkit-transition:all .3s ease-out;-moz-transition:all .3s ease-out;-o-transition:all .3s ease-out;transition:all .3s ease-out;text-decoration:none}
 a:visited,a:hover,a:active,a:focus{text-decoration:none}
@@ -29,8 +43,14 @@ a:visited,a:hover,a:active,a:focus{text-decoration:none}
 #section-banner .static-banner .banner-content, #section-banner .owl-carousel .banner-content{display: -webkit-flex; display: -moz-flex; display: -ms-flex; display: -o-flex; display: flex; justify-content: flex-start; align-items: center; background-color: rgba(0,0,0,.4);}
 #section-banner .static-banner .banner-content .banner-text, #section-banner .owl-carousel .banner-content .banner-text{max-width:420px;}
 #section-banner .banner-title{font-size: 44px; line-height: 49px; font-weight: 400; }
+#page-title {background-position: center center; background-repeat: no-repeat;background-size: cover;overflow: hidden;text-align: center;}
+#page-title .shortcode-output,#page-title .video-output {position: absolute;left: 0;top: 0;width: 100%;height: 100%;}
+#page-title .video-output video {width: 100%;}
+#page-title .content-wrap {position: relative;}
+#page-title .heading {color: #ffffff;display: block;margin-top: 300px;background-color: rgba(21,58,100,.5);  border-top-left-radius: 15px;border-top-right-radius: 15px;font-size: 45px;padding: 50px;}
 #section-link .link-unit{position: relative;text-align: center;}
 #section-link .link-unit .content{position: absolute;top: 0;left: 0;width: 100%;height: 100%;background-color: rgba(0,0,0,.3);color: #ffffff; padding-top: 7.29vw;}
+#page .content > *:last-child{margin-bottom: 0;} 
 #footer .address-wrap .address-title{font-weight: bold;}
 #footer .footer-main-address .address-wrap .address-title{display: block;}
 #footer .footer-menu ul{padding: 0;margin: 0;list-style: none;}

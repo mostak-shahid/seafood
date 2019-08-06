@@ -2,6 +2,75 @@
 function seafood_metaboxes() {
     $prefix = '_seafood_';
 
+    $banner_details = new_cmb2_box(array(
+        'id' => $prefix . 'banner_details',
+        'title' => __('Banner Details', 'cmb2'),
+        'object_types' => array('page'),
+        //'show_on'      => array( 'key' => 'page-template', 'value' => 'page-template/lightbox-gallery-page.php' ),
+    )); 
+    $banner_details->add_field( array(
+        'name'    => 'Banner Cover',
+        'desc'    => 'Upload an image or enter an URL.',
+        'id'      => $prefix . 'banner_cover',
+        'type'    => 'file',
+        // Optional:
+        'options' => array(
+            'url' => false, // Hide the text input for the url
+        ),
+        'text'    => array(
+            'add_upload_file_text' => 'Add Image' // Change upload button text. Default: "Add or Upload File"
+        ),
+        // query_args are passed to wp.media's library query.
+        'query_args' => array(
+            // 'type' => 'application/pdf', // Make library only display PDFs.
+            // Or only allow gif, jpg, or png images
+            'type' => array(
+             'image/gif',
+             'image/jpeg',
+             'image/png',
+            ),
+        ),
+        // 'preview_size' => 'large', // Image size to use when previewing in the admin.
+    ));
+    $banner_details->add_field( array(
+        'name' => __( 'MP4 Video', 'cmb2' ),
+        'id'   => $prefix . 'banner_mp4',
+        'type' => 'text_url',
+    ));
+    $banner_details->add_field( array(
+        'name' => __( 'WEBM Video', 'cmb2' ),
+        'id'   => $prefix . 'banner_webm',
+        'type' => 'text_url',
+    ));
+    $banner_details->add_field( array(
+        'name' => __( 'Short Code', 'cmb2' ),
+        'id'   => $prefix . 'banner_shortcode',
+        'type' => 'text',
+    ));  
+    $title_details = new_cmb2_box(array(
+        'id' => $prefix . 'title_details',
+        'title' => __('Content Title', 'cmb2'),
+        'object_types' => array('page'),
+        //'show_on'      => array( 'key' => 'page-template', 'value' => 'page-template/lightbox-gallery-page.php' ),
+    )); 
+    $title_details->add_field( array(
+        'name'    => 'Top part',
+        'desc'    => 'The smaller part',
+        'id'      => $prefix . 'top_part',
+        'type'    => 'text',
+    ));
+    $title_details->add_field( array(
+        'name'    => 'Middle part',
+        'desc'    => 'The Bigger part',
+        'id'      => $prefix . 'middle_part',
+        'type'    => 'text',
+    ));
+    $title_details->add_field( array(
+        'name'    => 'Bottom part',
+        'desc'    => 'The Golden part',
+        'id'      => $prefix . 'bottom_part',
+        'type'    => 'text',
+    ));
 	/*$gallery_details = new_cmb2_box(array(
         'id' => $prefix . 'gallery_details',
         'title' => __('Gallery Details', 'cmb2'),

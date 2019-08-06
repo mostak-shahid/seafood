@@ -19,3 +19,17 @@ function back_to_top_fnc () {
     <?php 
     endif;
 }
+function custom_admin_script(){
+    $frontpage_id = get_option( 'page_on_front' );
+    if ($_GET['post'] == $frontpage_id){ 
+        ?>
+        <script>
+        jQuery(document).ready(function($){
+            $('#_seafood_banner_details, #_seafood_title_details').hide();
+        });
+        </script>
+        <?php 
+    }
+        
+}
+add_action('admin_head', 'custom_admin_script');

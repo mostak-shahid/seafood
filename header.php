@@ -40,13 +40,33 @@
 		</div>
 	</header>
 	<?php if (!is_front_page()) : ?>
-		<section id="page-title" <?php if(@$seafood_options['sections-title-background-type'] == 1) echo 'class="'.@$seafood_options['sections-title-background'].'"';?>>
+		<?php 
+		$banner_img = get_post_meta( get_the_ID(), '_seafood_banner_cover', true ); 
+		$banner_mp4 = get_post_meta( get_the_ID(), '_seafood_banner_mp4', true ); 
+		$banner_webm = get_post_meta( get_the_ID(), '_seafood_banner_webm', true ); 
+		$banner_shortcode = get_post_meta( get_the_ID(), '_seafood_banner_shortcode', true ); 
+		?>
+		<section id="page-title" class="<?php if(@$seafood_options['sections-title-background-type'] == 1) echo @$seafood_options['sections-title-background'] . ' ';?><?php if(@$seafood_options['sections-title-color-type'] == 1) echo @$seafood_options['sections-title-color'];?>" <?php if ($banner_img) : ?>style="background-image:url(<?php echo $banner_img ?>)"<?php endif; ?>>
+			<?php if ($banner_shortcode) : ?>
+				<div class="shortcode-output"><?php echo do_shortcode( $banner_shortcode ); ?></div>
+			<?php elseif ($banner_mp4 OR $banner_webm) : ?>
+				<div class="video-output">
+					<video id="banner-video" autoplay loop muted playsinline <?php if ($banner_img) : ?> style="background-image:url(<?php echo $banner_img ?>)" <?php endif; ?>>
+					<?php if($banner_mp4) : ?>
+						<source src="<?php echo $banner_mp4 ?>">
+					<?php endif; ?>
+					<?php if($banner_webm) : ?>
+						<source src="<?php echo $banner_webm ?>">
+					<?php endif; ?>
+					</video>					
+				</div>
+			<?php endif; ?>
 			<div class="content-wrap">
 				<div class="container">
 					<?php 
 					if (is_home()) :
 						$page_for_posts = get_option( 'page_for_posts' );
-					$title = get_the_title($page_for_posts);
+						$title = get_the_title($page_for_posts);
 					elseif (is_404()) :
 						$title = '404 Page';
 					else :
